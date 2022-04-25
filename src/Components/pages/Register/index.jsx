@@ -89,7 +89,7 @@ export default function Register() {
           Kenzie Hub
         </Typography>
 
-        <Button className={classes.leaveButton} onClick={handleReturn} variant="contained" sx={{padding:"9px", backgroundColor:"grey.three"}} >
+        <Button onClick={handleReturn} variant="greyThree" sx={{padding:"9px", backgroundColor:"grey.three"}} >
           Return
         </Button>
       </Box>

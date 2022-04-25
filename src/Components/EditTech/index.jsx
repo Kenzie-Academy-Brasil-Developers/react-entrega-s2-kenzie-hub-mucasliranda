@@ -9,22 +9,17 @@ import api from "../../services/api"
 import { makeStyles } from "@mui/styles"
 
 const useStyles = makeStyles( (theme) => ({
+
   deleteButton: {
     backgroundColor: theme.palette.grey.one,
     "&:hover":{
       backgroundColor: theme.palette.grey.two,
     }
   },
-
-  eachTechs: {
-    "&:hover": {
-      backgroundColor: "blue"
-    }
-  }
   
 }))
 
-export default function CreateTech({setEditTech, editTech, techToEdit, auth}) {
+export default function CreateTech({setEditTech, editTech, techToEdit}) {
 
   const classes = useStyles()
 
@@ -125,7 +120,7 @@ export default function CreateTech({setEditTech, editTech, techToEdit, auth}) {
                 Save
               </Button>
               
-              <Button onClick={onDelete} variant="contained" className={classes.deleteButton} sx={{padding:"9px", marginTop: "-15px", maxWidth: "76px", width: "100%",}} >
+              <Button onClick={onDelete} variant="greyOne" sx={{padding:"9px", marginTop: "-15px", maxWidth: "76px", width: "100%",}} >
                 Delete
               </Button>
 

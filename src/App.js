@@ -104,60 +104,40 @@ function App() {
         root: {
           color: '#f8f9fa',
           "&:hover": {
-            backgroundColor: "#212529"
+            backgroundColor: theme.palette.grey.one
+          },
+          "&:focus": {
+            backgroundColor: theme.palette.grey.three
           }
         },
       },
     },
-
+    MuiButton: {
+      variants: [
+        {
+          props: {variant: "greyOne"},
+          style: {
+            color: theme.palette.grey.zero,
+            backgroundColor: theme.palette.grey.one,
+            "&:hover": {
+              backgroundColor: theme.palette.grey.two,
+            }
+          },
+        },
+        {
+          props: {variant: "greyThree"},
+          style: {
+            color: theme.palette.grey.zero,
+            backgroundColor: theme.palette.grey.three,
+            "&:hover": {
+              backgroundColor: theme.palette.grey.two,
+            }
+          },
+        },
+      ]
+    }
   
   }
-
-  const [auth, setAuth] = useState("")
-
-  // theme.props = {
-  //   MuiButton: {
-  //     disableElevation: true,
-  //   },
-  // }
-
-  // theme.overrides = {
-  //   MuiList: {
-  //     root: {
-  //       padding: "0px",
-  //     }
-  //   },
-  //   MuiButton: {
-  //     disableElevation: true,
-  //   },
-  //   MuiOutlinedInput: {
-  //     root: {
-  //       fieldset: {
-  //         borderColor: "none",
-  //       },
-  //     },
-  //   },
-  //   MuiInputLabel: {
-  //     root: {
-  //       color: 'white',
-  //     }
-  //   }
-  // }
-
-  // MuiTextField: {
-  //   styleOverrides: {
-  //     root: {
-  //       input: {
-  //         height: "16px",
-  //         '@media (max-width:600px)': {
-  //           height: "8px",
-  //         },
-  //       },
-  //     },
-  //   },
-  // },
-
-  // theme = responsiveFontSizes(theme)
 
   return (
     <ThemeProvider theme={theme} >
@@ -177,7 +157,7 @@ function App() {
         theme='dark'
       />
 
-        <Routes auth={auth} setAuth={setAuth} />
+        <Routes />
 
       </div>
 

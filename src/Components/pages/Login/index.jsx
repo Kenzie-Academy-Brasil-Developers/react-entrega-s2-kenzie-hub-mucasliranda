@@ -15,6 +15,7 @@ const useStyles = makeStyles( (theme) => ({
     "&:hover": {
       backgroundColor: theme.palette.grey.two,
     }
+    
   }
 
 }))
@@ -22,6 +23,8 @@ const useStyles = makeStyles( (theme) => ({
 export default function Login() {
 
   const classes = useStyles()
+
+  console.log(classes)
 
   const history = useHistory()
 
@@ -93,7 +96,7 @@ export default function Login() {
             Don't have account?
           </Typography>
 
-          <Button className={classes.createButton} onClick={handleRegister} variant="contained" sx={{padding:"9px"}} >
+          <Button variant="greyOne" onClick={handleRegister} sx={{padding:"9px"}} >
             Create account
           </Button>
 

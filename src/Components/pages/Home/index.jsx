@@ -16,11 +16,12 @@ const useStyles = makeStyles( (theme) => ({
     "&:hover": {
       backgroundColor: theme.palette.grey.two,
     }
+
   }
 
 }))
 
-export default function Home({auth, setAuth}) {
+export default function Home() {
 
   const classes = useStyles()
 
@@ -49,8 +50,6 @@ export default function Home({auth, setAuth}) {
       })
     )
 
-    console.log(techToEdit)
-
     setEditTech(!editTech)
     
   }
@@ -59,7 +58,6 @@ export default function Home({auth, setAuth}) {
     api.get(`/users/${localStorage.getItem("id")}`, {headers: { Authorization: `Bearer ${localStorage.getItem("token")}`}})
     .then( (res) => {
       setInfos(res.data)
-      // console.log(res)
     })
     .catch( (err) =>{
       console.log(err)
@@ -82,7 +80,7 @@ export default function Home({auth, setAuth}) {
             Kenzie Hub
           </Typography>
 
-          <Button onClick={handleLeave} variant="contained" className={classes.leaveButton} sx={{padding:"9px", backgroundColor:"grey.three"}} >
+          <Button onClick={handleLeave} variant="greyThree" sx={{padding:"9px"}} >
             Leave
           </Button>
 
@@ -133,9 +131,9 @@ export default function Home({auth, setAuth}) {
 
         </Box>
 
-        <CreateTech createTech={createTech} setCreateTech={setCreateTech} auth={auth} />
+        <CreateTech createTech={createTech} setCreateTech={setCreateTech} />
 
-        <EditTech editTech={editTech} setEditTech={setEditTech} techToEdit={techToEdit} auth={auth} />
+        <EditTech editTech={editTech} setEditTech={setEditTech} techToEdit={techToEdit} />
         
       </Box>
 
